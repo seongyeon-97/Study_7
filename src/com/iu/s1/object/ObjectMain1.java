@@ -20,8 +20,20 @@ public class ObjectMain1 {
 		
 		Object obj2 = new Object();
 		
-		boolean flag = obj.equals(obj2);
+		boolean flag = obj.equals(obj);
 		System.out.println(flag);
+		
+		Test test = new Test();
+		Test test2 = new Test();
+		System.out.println(test == test2);
+		System.out.println(test.num1 == test2.num1);
+		System.out.println(test.equals(test2));
+		
+		
+		//test.hashCode();
+		
+		//Object obj3 = test;
+		
 		
 		
 	}
