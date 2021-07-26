@@ -13,11 +13,21 @@ public class Ex1Main {
 		
 		System.out.println("----Weater Program----");
 		
-		WeatherController wc = new WeatherController();
-		wc.start();
+//		WeatherController wc = new WeatherController();
+//		wc.start();
+//		
+		WeaterInfo weaterInfo = new WeaterInfo();
+//		weaterInfo.makeWeater();
+		WeaterDTO [] weaterDTOs = weaterInfo.makeWeater();
 		
-		
-		
+		for(int i=0; i<weaterDTOs.length; i++) {
+			System.out.println("---------------");
+			System.out.println(weaterDTOs[i].getCity());
+			System.out.println(weaterDTOs[i].getTemp());
+			System.out.println(weaterDTOs[i].getHum());			
+			System.out.println(weaterDTOs[i].getCondition());
+			System.out.println("---------------");
+		}
 	}
 
 }

@@ -18,8 +18,9 @@ public class WeatherController {
 		boolean flag = true;
 		
 		while(flag) {
-			System.out.println("1. 전체 출력 " + "2. 지역검색 " + "3. 지역정보 추가 " + "4. 종  료");
 			weatherInfo.makeWeater();
+			System.out.println("1. 전체 출력 " + "2. 지역검색 " + "3. 지역정보 추가 " + "4. 종  료");
+			
 			Scanner sc = new Scanner(System.in);
 			int choice = sc.nextInt();
 			switch(choice) {
