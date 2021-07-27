@@ -1,6 +1,6 @@
 package com.iu.s1.string.ex1;
 
-public class WeaterDTO {
+public class WeatherDTO {
 	
 	private String city;
 	private String temp;
