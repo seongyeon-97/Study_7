@@ -11,24 +11,43 @@ public class WrapperMain3 {
 		for(int i=0; i<13; i++) {
 			String num = jumin.substring(i, i+1);
 			int number = Integer.parseInt(num);
-			if(i>8) {			
-				int j=0;
-				++j;
-				number = number*(j+2);
-				
-				System.out.println("------");
-				System.out.println(j);
-				System.out.println("------");
-			}else {
-			number = number*(i+2);
+			if(i<=7) {			
+				number = number*(i+2);
+			}else if(i>7) {
+				if(i==8) {
+					number = number*2;
+				}else if(i==9) {
+					number = number*3;
+				}else if(i==10) {
+					number = number*4;
+				}else if(i==11) {
+					number = number*5;
+				}
+			
 			}
+			
 			nums[i]=number;
 		}
-		for(int i=0; i<nums.length; i++) {
-			System.out.println(nums[i]);
+		
+		int hap = 0;
+		
+		for(int i =0; i<nums.length-1; i++) {			
+			hap = hap + nums[i];		
 		}
+	
+		System.out.println(hap);
 		
-		
+		if(11-hap%11 == nums[12]) {
+			System.out.println("올바른 번호입니다");			
+		}else if(11-hap%11 > 10) {
+			if((11-hap%11)%10 == nums[12]) {
+				System.out.println("올바른 번호입니다");	
+			}else {
+				System.out.println("틀린 번호입니다");
+			}
+		}else {
+			System.out.println("틀린 번호입니다");
+		}
 				
 	}
 
