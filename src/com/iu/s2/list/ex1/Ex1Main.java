@@ -8,8 +8,11 @@ public class Ex1Main {
 
 	public static void main(String[] args) {
 		
-		MemberDAO dao = new MemberDAO();
-		ArrayList<MemberDTO> ar = dao.memberInit();
+		MemberController controller = new MemberController();
+		controller.start();
+		
+//		MemberDAO dao = new MemberDAO();
+//		ArrayList<MemberDTO> ar = dao.memberInit();
 		//dao.memberAdd(ar);
 		//int result = dao.memberDelete(ar);
 		
@@ -19,12 +22,12 @@ public class Ex1Main {
 //			System.out.println("삭제 실패");
 //		}
 		
-		MemberDTO dto = dao.memberLogin(ar);
-		if(dto != null) {
-			System.out.println("로그인 성공");
-		}else {
-			System.out.println("로그인 실패");
-		}
+//		MemberDTO dto = dao.memberLogin(ar);
+//		if(dto != null) {
+//			System.out.println("로그인 성공");
+//		}else {
+//			System.out.println("로그인 실패");
+//		}
 		
 		
 		
