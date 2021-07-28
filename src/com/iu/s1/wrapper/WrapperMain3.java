@@ -51,6 +51,9 @@ public class WrapperMain3 {
 			}
 		}else {
 			System.out.println("틀린 번호입니다");
-		}				
+		}	
+		
+		double d = Math.random();
+		System.out.println(d);
 	}
 }
