@@ -1,5 +1,12 @@
 package com.iu.s2.list.ex1;
 
-public class MemberSession {
+import java.util.HashMap;
 
+public class MemberSession {
+	public static final HashMap<String, MemberDTO> SESSION;
+	
+	static {
+		SESSION = new HashMap<String, MemberDTO>();
+	}
+	
 }
