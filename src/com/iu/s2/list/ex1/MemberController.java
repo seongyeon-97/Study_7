@@ -7,11 +7,14 @@ public class MemberController {
 	private Scanner sc;
 	private MemberDAO memberDAO;
 	private ArrayList<MemberDTO> ar;
+	private MemberView view;
+	
 	public MemberController() {
 		sc = new Scanner(System.in);
 		memberDAO = new MemberDAO();
 		//init - 초기화
 		ar = memberDAO.memberInit();
+		view = new MemberView();
 	}
 	
 	
@@ -45,6 +48,7 @@ public class MemberController {
 		
 		if(select == 1) {
 			System.out.println("내 정보 출력");
+			view.view();
 		}else {
 			//1.수정
 			MemberSession.SESSION.put("member", null);
