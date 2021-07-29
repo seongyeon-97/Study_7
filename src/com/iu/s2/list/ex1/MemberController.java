@@ -20,7 +20,15 @@ public class MemberController {
 		
 		boolean check=true;
 		while(check) {
-			check=beforeLogin();
+		
+			if(MemberSession.SESSION.get("member") != null) {
+				//로그인 성공한 후
+				afterLogin();
+			}else {
+				//로그인 전, 실패
+				check = beforeLogin();
+			}
+			
 			
 		}
 		//1. 회원가입
@@ -33,6 +41,18 @@ public class MemberController {
 	private void afterLogin() {
 		System.out.println("1. Mypage");
 		System.out.println("2. Logout");
+		int select = sc.nextInt();
+		
+		if(select == 1) {
+			System.out.println("내 정보 출력");
+		}else {
+			//1.수정
+			MemberSession.SESSION.put("member", null);
+			//2.삭제
+			//MemberSession.SESSION.remove("member");
+			//3.전체삭제
+			//MemberSession.SESSION.clear();
+		}
 		
 	}
 	
@@ -50,6 +70,7 @@ public class MemberController {
 			MemberDTO memberDTO = memberDAO.memberLogin(ar);
 			if(memberDTO != null) {
 				System.out.println("로그인 성공");
+				MemberSession.SESSION.put("member", memberDTO);
 			}else {
 				System.out.println("로그인 실패");
 			}
